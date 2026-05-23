@@ -1,0 +1,73 @@
+/* infiniteweb - style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f0f1a, #000);
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* main container */
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+/* title */
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #7f00ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* subtitle */
+p {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* glowing background orb */
+.glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0,212,255,0.25), transparent 70%);
+  filter: blur(40px);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* optional: subtle grid effect */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
